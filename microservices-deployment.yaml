@@ -207,6 +207,10 @@ spec:
       port: 80
       targetPort: 7070
   type: ClusterIP
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/main
 ---
 apiVersion: apps/v1
 kind: Deployment
