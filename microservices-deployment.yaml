@@ -1,4 +1,4 @@
-# Currency Service
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,10 +14,10 @@ spec:
         app: currencyservice
     spec:
       containers:
-      - name: currencyservice
-        image: marypearl/currencyservice:latest
-        ports:
-        - containerPort: 7000
+        - name: currencyservice
+          image: marypearl/currencyservice:latest
+          ports:
+            - containerPort: 7000
 
 ---
 apiVersion: v1
@@ -28,14 +28,12 @@ spec:
   selector:
     app: currencyservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 7000
+    - protocol: TCP
+      port: 80
+      targetPort: 7000
   type: ClusterIP
 
 ---
-
-# Load Generator
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -51,10 +49,10 @@ spec:
         app: loadgenerator
     spec:
       containers:
-      - name: loadgenerator
-        image: marypearl/loadgenerator:latest
-        ports:
-        - containerPort: 8080
+        - name: loadgenerator
+          image: marypearl/loadgenerator:latest
+          ports:
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -65,14 +63,12 @@ spec:
   selector:
     app: loadgenerator
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
   type: ClusterIP
 
 ---
-
-# Product Catalog Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -88,10 +84,10 @@ spec:
         app: productcatalogservice
     spec:
       containers:
-      - name: productcatalogservice
-        image: marypearl/productcatalogservice:latest
-        ports:
-        - containerPort: 3550
+        - name: productcatalogservice
+          image: marypearl/productcatalogservice:latest
+          ports:
+            - containerPort: 3550
 
 ---
 apiVersion: v1
@@ -102,14 +98,12 @@ spec:
   selector:
     app: productcatalogservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 3550
+    - protocol: TCP
+      port: 80
+      targetPort: 3550
   type: ClusterIP
 
 ---
-
-# Checkout Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -125,10 +119,10 @@ spec:
         app: checkoutservice
     spec:
       containers:
-      - name: checkoutservice
-        image: marypearl/checkoutservice:latest
-        ports:
-        - containerPort: 5050
+        - name: checkoutservice
+          image: marypearl/checkoutservice:latest
+          ports:
+            - containerPort: 5050
 
 ---
 apiVersion: v1
@@ -139,14 +133,12 @@ spec:
   selector:
     app: checkoutservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 5050
+    - protocol: TCP
+      port: 80
+      targetPort: 5050
   type: ClusterIP
 
 ---
-
-# Shipping Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -162,10 +154,10 @@ spec:
         app: shippingservice
     spec:
       containers:
-      - name: shippingservice
-        image: marypearl/shippingservice:latest
-        ports:
-        - containerPort: 50051
+        - name: shippingservice
+          image: marypearl/shippingservice:latest
+          ports:
+            - containerPort: 50051
 
 ---
 apiVersion: v1
@@ -176,14 +168,12 @@ spec:
   selector:
     app: shippingservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 50051
+    - protocol: TCP
+      port: 80
+      targetPort: 50051
   type: ClusterIP
 
 ---
-
-# Cart Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -199,10 +189,10 @@ spec:
         app: cartservice
     spec:
       containers:
-      - name: cartservice
-        image: marypearl/cartservice:latest
-        ports:
-        - containerPort: 7070
+        - name: cartservice
+          image: marypearl/cartservice:latest
+          ports:
+            - containerPort: 7070
 
 ---
 apiVersion: v1
@@ -213,14 +203,12 @@ spec:
   selector:
     app: cartservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 7070
+    - protocol: TCP
+      port: 80
+      targetPort: 7070
   type: ClusterIP
 
 ---
-
-# Email Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -236,10 +224,10 @@ spec:
         app: emailservice
     spec:
       containers:
-      - name: emailservice
-        image: marypearl/emailservice:latest
-        ports:
-        - containerPort: 8080
+        - name: emailservice
+          image: marypearl/emailservice:latest
+          ports:
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -250,14 +238,12 @@ spec:
   selector:
     app: emailservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
   type: ClusterIP
 
 ---
-
-# Payment Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -273,10 +259,10 @@ spec:
         app: paymentservice
     spec:
       containers:
-      - name: paymentservice
-        image: marypearl/paymentservice:latest
-        ports:
-        - containerPort: 50051
+        - name: paymentservice
+          image: marypearl/paymentservice:latest
+          ports:
+            - containerPort: 50051
 
 ---
 apiVersion: v1
@@ -287,14 +273,12 @@ spec:
   selector:
     app: paymentservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 50051
+    - protocol: TCP
+      port: 80
+      targetPort: 50051
   type: ClusterIP
 
 ---
-
-# Frontend Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -310,10 +294,10 @@ spec:
         app: frontend
     spec:
       containers:
-      - name: frontend
-        image: marypearl/frontend:latest
-        ports:
-        - containerPort: 8080
+        - name: frontend
+          image: marypearl/frontend:latest
+          ports:
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -324,14 +308,12 @@ spec:
   selector:
     app: frontend
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
-  type: LoadBalancer  # Changed to LoadBalancer
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer
 
 ---
-
-# Recommendation Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -347,10 +329,10 @@ spec:
         app: recommendationservice
     spec:
       containers:
-      - name: recommendationservice
-        image: marypearl/recommendationservice:latest
-        ports:
-        - containerPort: 8080
+        - name: recommendationservice
+          image: marypearl/recommendationservice:latest
+          ports:
+            - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -361,14 +343,12 @@ spec:
   selector:
     app: recommendationservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8080
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
   type: ClusterIP
 
 ---
-
-# Ad Service
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -384,10 +364,10 @@ spec:
         app: adservice
     spec:
       containers:
-      - name: adservice
-        image: marypearl/adservice:latest
-        ports:
-        - containerPort: 9555
+        - name: adservice
+          image: marypearl/adservice:latest
+          ports:
+            - containerPort: 9555
 
 ---
 apiVersion: v1
@@ -398,7 +378,7 @@ spec:
   selector:
     app: adservice
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 9555
+    - protocol: TCP
+      port: 80
+      targetPort: 9555
   type: ClusterIP
