@@ -207,7 +207,7 @@ spec:
       port: 80
       targetPort: 7070
   type: ClusterIP
-  
+
 ---
 apiVersion: apps/v1
 kind: Deployment
